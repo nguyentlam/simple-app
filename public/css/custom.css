@@ -1,0 +1,13 @@
+#main-wrapper[data-layout=horizontal] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=horizontal] .topbar[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar .navbar-collapse[data-navbarbg=skin5], #main-wrapper[data-layout=vertical] .topbar[data-navbarbg=skin5] {
+  background: #aab5e5;
+}
+
+span.logo-text {
+  color:#dd8563; 
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.table tbody tr, .table thead th {
+  font-size: 0.875rem;
+}

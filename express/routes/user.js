@@ -45,7 +45,6 @@ router.get('/dashboard', requireLogin, async(req, res) => {
     totalActiveUsersToday: totalActiveUsersToday,
     averageActiveUsersIn7day: averageActiveUsersIn7day.toFixed(2)
   };
-  console
   res.render('dashboard', { users: users, statistic: statistic});
 });
 

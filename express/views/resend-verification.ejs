@@ -2,23 +2,7 @@
 <html dir="ltr" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Resend Verification</title>
-    <<!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="ample-admin/plugins/images/favicon.png">
-    <!-- Custom CSS -->
-    <link href="ample-admin/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-    <link href="/css/custom.css" rel="stylesheet">
+    <%- include('partials/head', {title : 'Resend Verification'}) %>
 </head>
 
 <body>
@@ -39,137 +23,14 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin6">
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a class="navbar-brand" href="/dashboard">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <span >SimpleApp</span>
-                        </span>
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <ul class="navbar-nav d-none d-md-block d-lg-none">
-                        <li class="nav-item">
-                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
-                                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav ms-auto d-flex align-items-center">
-
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <!-- <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3">
-                                <input type="text" placeholder="Search..." class="form-control mt-0">
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li> -->
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li>
-                            <div class="dropdown">
-                                <div class="dropdown-toggle" id="dropdownMenuProfile" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <a class="profile-pic" href="#"> <img src="ample-admin/plugins/images/users/circle-user-2.png" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium"><% if (locals.userinfo) { %> <%= userinfo.name || userinfo.username || userinfo.email %> <% } %></span></a>
-                                </div>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuProfile">
-                                    <!-- <li><a class="dropdown-item" href="/profile"> Profile </a></li> -->
-                                    <li>
-                                        <a class="dropdown-item" href="javascript: document.logoutForm.submit()" > Logout </a>
-                                        <form name="logoutForm" class="disabled" action="/logout" method="post" >
-                                            <input hidden type="submit" value="Logout"/>
-                                        </form>
-                                    </li>
-                                </ul>
-                              </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <%- include('partials/header') %>
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <!-- User Profile-->
-                        <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard"
-                                aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/profile"
-                                aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/reset-password"
-                                aria-expanded="false">
-                                <i class="fas fa-lock" aria-hidden="true"></i>
-                                <span class="hide-menu">Reset Password</span>
-                            </a>
-                        </li> 
-                        <li class="sidebar-item d-block d-sm-none">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript: document.logoutForm2.submit()"
-                                aria-expanded="false">
-                                <i class="fas fa-circle-notch" aria-hidden="true"></i>
-                                <span class="hide-menu">Logout</span>
-                                <form name="logoutForm2" class="disabled" action="/logout" method="post" >
-                                    <input hidden type="submit" value="Logout"/>
-                                </form>
-                            </a>
-                        </li>
-                    </ul>
-
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
+        <%- include('partials/sidebar') %>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -207,35 +68,34 @@
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
-									
-                        <!-- Column -->
-                        <div class="col-lg-8 col-xlg-9 col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                            <% if (locals.message) { %>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                        <%= message %>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                    </div>
-                                            <% } %>
-                                            <% if (locals.error) { %>
-                                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                        <%= error.message %>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                    </div>
-                                            <% } %>
-                                            <p>Please verify your email. If want to resend email, please click below.</p>
-                                            <form class="form-horizontal form-material" action="/resend-verification" method="post">    
-                                                <div class="form-group mb-4">
-                                                    <div class="col-sm-12">
-                                                        <button class="btn btn-primary" type="submit">Resend Email Verification</button>
-                                                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                        <% if (locals.message) { %>
+                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    <%= message %>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>
-                                            </form>
-                                    </div>
+                                        <% } %>
+                                        <% if (locals.error) { %>
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <%= error.message %>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                        <% } %>
+                                        <p>Please verify your email. If want to resend email, please click below.</p>
+                                        <form class="form-horizontal form-material" action="/resend-verification" method="post">    
+                                            <div class="form-group mb-4">
+                                                <div class="col-sm-12">
+                                                    <button class="btn btn-primary" type="submit">Resend Email Verification</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                 </div>
-                        </div>
-                        <!-- Column -->
+                            </div>
+                    </div>
+                    <!-- Column -->
                 </div>
                 <!-- Row -->
                 <!-- ============================================================== -->
@@ -255,8 +115,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-            </footer>
+            <%- include('partials/footer') %>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -271,18 +130,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="ample-admin/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="ample-admin/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="ample-admin/js/app-style-switcher.js"></script>
-    <!--Wave Effects -->
-    <script src="ample-admin/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="ample-admin/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="ample-admin/js/custom.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
+    <%- include('partials/scripts') %>
 </body>
 
 </html>
